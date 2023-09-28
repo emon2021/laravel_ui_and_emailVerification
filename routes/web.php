@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ClassesController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,33 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+//__crud operations route for classes__//
+Route::get('/classes',[ClassesController::class,'index'])->name('classes.index');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

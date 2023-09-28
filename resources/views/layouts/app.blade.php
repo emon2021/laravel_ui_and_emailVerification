@@ -72,6 +72,7 @@
                                     <a href="{{route('deposite.money')}}" class="dropdown-item">Depostie Money</a>
        
                                     <a href="{{route('password.change')}}" class="dropdown-item">Change Password</a>
+                                    <a href="{{route('classes.index')}}" class="dropdown-item">Classes</a>
                                 </div>
                                
                                    
