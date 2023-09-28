@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\URL;
+use PHPUnit\Runner\Hook;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +40,7 @@ Route::get('/deposite/money',[HomeController::class,'deposite'])->name('deposite
 Route::get('/verify/email', [HomeController::class,'verified'])->name('verification.notice')->middleware('auth');
 // email verification resend
 Route::post('/resend/email', [VerificationController::class,'resend'])->name('verification.resend')->middleware('auth');
+// password change file view
+Route::get('/password/change',[HomeController::class,'passChange'])->name('password.change');
+// update password
+Route::post('/password/update',[HomeController::class,'updatePass'])->name('update.password')->middleware('auth');
