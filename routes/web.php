@@ -28,7 +28,8 @@ Auth::routes();
 
 //__crud operations route for classes__//
 Route::get('/classes',[ClassesController::class,'index'])->name('classes.index');
-
+Route::get('/create/class',[ClassesController::class,'create'])->name('create.class');
+Route::post('/store/class',[ClassesController::class,'store'])->name('store.class');
 
 
 

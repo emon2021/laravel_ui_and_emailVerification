@@ -24,7 +24,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{ route('home') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -72,7 +72,7 @@
                                     <a href="{{route('deposite.money')}}" class="dropdown-item">Depostie Money</a>
        
                                     <a href="{{route('password.change')}}" class="dropdown-item">Change Password</a>
-                                    <a href="{{route('classes.index')}}" class="dropdown-item">Classes</a>
+                                    <a href="{{route('classes.index')}}" class="dropdown-item">All Class</a>
                                 </div>
                                
                                    
@@ -88,5 +88,6 @@
             @yield('content')
         </main>
     </div>
+    <footer class="bg-dark text-center text-light p-3">Copyright&copy; All Rights Reserved by Ahmed</footer>
 </body>
 </html>

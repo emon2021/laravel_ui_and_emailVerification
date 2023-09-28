@@ -14,13 +14,29 @@ class ClassesController extends Controller
         $this->middleware('auth');
     }
 
-    //__class index method for crud__//
+    //__class index method showing all classes__//
     public function index()
     {
         $class = DB::table('classes')->get();
         return view('admin.classes.index',compact('class'));
     }
-
+    //__viewing class create page__//
+    public function create()
+    {
+        return view('admin.classes.create');
+    }
+    //__store class__//
+    public function store(Request $request)
+    {
+        $request->validate([
+            'class_name'=>'required|unique:classes',
+        ]);
+        $data = array(
+            'class_name'=>$request->class_name,
+        );
+        DB::table('classes')->insert($data);
+        return redirect()->back()->with('success','New Class Added Successfully!');
+    }
 
 
 }

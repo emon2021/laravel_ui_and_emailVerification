@@ -3,9 +3,12 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-10 card p-0">
-                <h4 class="card-header">Classes</h4>
+                <div class="card-header">
+                    <h4 class="float-start">Classes</h4>
+                    <a href="{{route('create.class')}}" class="btn btn-primary float-end">Add New</a>
+                </div>
+                
                 <div class="card-body">
-                    <a href="#" class="btn btn-primary float-end">Add New</a>
                    <table class="table table-responsive table-striped">
                         <thead>
                             <tr>
