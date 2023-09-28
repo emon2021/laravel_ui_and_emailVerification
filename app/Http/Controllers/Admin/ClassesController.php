@@ -38,5 +38,12 @@ class ClassesController extends Controller
         return redirect()->back()->with('success','New Class Added Successfully!');
     }
 
+    //__delete method for class__//
+    public function delete($id)
+    {
+        DB::table('classes')->where('id',$id)->delete();
+        return redirect()->back()->with('deleteSuccess','Class Deleted Successfully!');
+    }
+
 
 }
