@@ -73,6 +73,7 @@
        
                                     <a href="{{route('password.change')}}" class="dropdown-item">Change Password</a>
                                     <a href="{{route('classes.index')}}" class="dropdown-item">All Class</a>
+                                    <a href="{{route('students.index')}}" class="dropdown-item">All Student</a>
                                 </div>
                                
                                    
@@ -89,5 +90,12 @@
         </main>
     </div>
     <footer class="bg-dark text-center text-light p-3">Copyright&copy; All Rights Reserved by Ahmed</footer>
+
+    <script>
+        function clickHide()
+        {
+            document.querySelector('.selected').style.display='none';
+        }
+    </script>
 </body>
 </html>

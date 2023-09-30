@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ClassesController;
+use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -31,9 +32,11 @@ Route::get('/classes',[ClassesController::class,'index'])->name('classes.index')
 Route::get('/create/class',[ClassesController::class,'create'])->name('create.class');
 Route::post('/store/class',[ClassesController::class,'store'])->name('store.class');
 Route::get('/classes/delete/{id}',[ClassesController::class,'delete'])->name('delete.class');
+Route::get('classes/edit/{id}',[ClassesController::class,'edit'])->name('edit.class');
+Route::post('classes/update/{id}',[ClassesController::class,'update'])->name('update.class');
 
-
-
+//__resource route for students crud__//
+Route::resource('/students',StudentController::class);
 
 
 

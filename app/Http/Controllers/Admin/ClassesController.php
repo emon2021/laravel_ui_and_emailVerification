@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Laravel\Ui\Presets\React;
 
 class ClassesController extends Controller
 {
@@ -43,6 +44,28 @@ class ClassesController extends Controller
     {
         DB::table('classes')->where('id',$id)->delete();
         return redirect()->back()->with('deleteSuccess','Class Deleted Successfully!');
+    }
+
+
+    //__edit page view method
+    public function edit($id)
+    {
+        $data = DB::table('classes')->where('id',$id)->first();
+        return view('admin.classes.edit',compact('data'));
+    }
+
+    
+    //__update data for classes
+    public function update(Request $request,$id)
+    {
+        $request->validate([
+            'class_name'=>'required',
+        ]);
+        $data = array(
+            'class_name'=>$request->class_name,
+        );
+        DB::table('classes')->where('id',$id)->update($data);
+        return redirect()->route('classes.index')->with('success','Class updated successfully!');
     }
 
 
