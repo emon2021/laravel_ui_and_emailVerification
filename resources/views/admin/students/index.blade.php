@@ -33,7 +33,7 @@
                                     <td>{{ ++$key}}</td>
                                     <td>{{$data->name}}</td>
                                     <td>{{$data->roll}}</td>
-                                    <td>{{$data->class_id}}</td>
+                                    <td>{{$data->class_name}}</td>
                                     <td>{{$data->phone}}</td>
                                     <td>{{$data->email}}</td>
                                     
